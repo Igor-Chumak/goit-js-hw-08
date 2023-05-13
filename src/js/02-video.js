@@ -2,7 +2,9 @@
 // npm i --save lodash.throttle
 import Player from '@vimeo/player';
 // import throttle from 'lodash.throttle';
+// import lodashThrottle from 'lodash.throttle';
 var throttle = require('lodash.throttle');
+// var lodashThrottle = require('lodash.throttle');
 
     const iframe = document.querySelector('iframe');
     const player = new Player(iframe);
@@ -10,7 +12,12 @@ var throttle = require('lodash.throttle');
     let currentTime=localStorage.getItem("videoplayer-current-time");
         console.log('Считано время: ', currentTime);
 
-    player.on('timeupdate', _.throttle(function() {}, 0));
+    // player.on('timeupdate', _.throttle(function() {}, 0));
+    player.on('timeupdate',  _.throttle(timeupdate, 0));
+
+    function timeupdate(e) {
+        console.log(e);
+    }
 
     // player.on('timeupdate', _.throttle(function({seconds}) {
     //     currentTime = seconds;
