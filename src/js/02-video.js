@@ -1,5 +1,8 @@
 // npm install @vimeo/player
+// npm i --save lodash.throttle
 import Player from '@vimeo/player';
+// import throttle from 'lodash.throttle';
+var throttle = require('lodash.throttle');
 
     const iframe = document.querySelector('iframe');
     const player = new Player(iframe);
@@ -7,11 +10,13 @@ import Player from '@vimeo/player';
     let currentTime=localStorage.getItem("videoplayer-current-time");
         console.log('Считано время: ', currentTime);
 
-    player.on('timeupdate', function({seconds}) {
-        currentTime = seconds;
-        localStorage.setItem("videoplayer-current-time", currentTime);
-        console.log('currentTime: ', currentTime);
-    });
+    player.on('timeupdate', _.throttle(function() {}, 0));
+
+    // player.on('timeupdate', _.throttle(function({seconds}) {
+    //     currentTime = seconds;
+    //     localStorage.setItem("videoplayer-current-time", currentTime);
+    //     console.log('currentTime: ', currentTime);
+    // }, 1000));
 
     player.setCurrentTime(currentTime).then(function(seconds) {
         console.log('Play will start from seconds: ', seconds);
