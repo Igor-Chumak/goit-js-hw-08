@@ -4,9 +4,9 @@ import { galleryItems } from './gallery-items';
 // console.log(galleryItems);
 // Описан в документации
 // npm install simplelightbox;
-import SimpleLightbox from "simplelightbox";
+// import SimpleLightbox from "simplelightbox";
 // Дополнительный импорт стилей
-import "simplelightbox/dist/simple-lightbox.min.css";
+// import "simplelightbox/dist/simple-lightbox.min.css";
 
 document
   .querySelector(".gallery")
