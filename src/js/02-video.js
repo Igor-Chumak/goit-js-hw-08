@@ -4,6 +4,7 @@
 import Player from '@vimeo/player';
 // import throttle from 'lodash.throttle';
 // import lodashThrottle from 'lodash.throttle';
+var _ = require('lodash.throttle');
 var throttle = require('lodash.throttle');
 // var lodashThrottle = require('lodash.throttle');
 
