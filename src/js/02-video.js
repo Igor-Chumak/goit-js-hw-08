@@ -7,7 +7,7 @@ import throttle from 'lodash.throttle';
     const player = new Player(iframe);
 
     let currentTime=localStorage.getItem("videoplayer-current-time");
-        // console.log('Считано время: ', currentTime);
+        // console.log('Reed time: ', currentTime);
 
     player.on('timeupdate', throttle(function({seconds}) {
         currentTime = seconds;
