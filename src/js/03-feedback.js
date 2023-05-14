@@ -25,7 +25,6 @@ function handleSubmitOutput(e) {
     elements: { email, message },
   } = e.currentTarget;
   console.log({ email: email.value, message: message.value });
-  email.value = '';
-  message.value = '';
+  e.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
 }
